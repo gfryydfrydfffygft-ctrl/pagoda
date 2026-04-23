@@ -1,0 +1,236 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3ffe6; /* မူလ အရောင် */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1100px; 
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    /* Glassmorphism Effect */
+    background: rgb(211, 164, 89); /* နောက်ခံကို အကြည်ရောင် ၈၀% ထား */
+    box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    backdrop-filter: blur(40px); /* အနောက်ကပုံကို ဝါးသွားစေဖို့ */
+    border: 1.5px solid rgba(56, 87, 154, 0.18);
+    height: 70px; /* အနည်းငယ် ပိုကျဉ်းလိုက်ရင် ပိုကြည့်ကောင်းပါတယ် */
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid rgba(108, 66, 66, 0.1); /* အောက်ခြေမှာ မျဉ်းပါးပါးလေးထည့် */
+    display: flex;
+    align-items: center;
+}
+
+
+.logo img {
+    margin-top: 10px;
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 35px;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize; /* အကုန် အကြီးစာလုံးထက် ပထမစာလုံးပဲ ကြီးတာက ပိုကြည်လင်ပါတယ် */
+    padding: 8px 15px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+.logo a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #db2e98;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.nav-links li a:hover::after {
+    width: 70%; /* Hover လုပ်ရင် မျဉ်းလေး ထွက်လာမယ် */
+}
+.nav-links li a:hover {
+    color: #db2e98;
+}
+
+
+.hero-section {
+    padding: 60px 0;
+}
+
+.content-center {
+    flex-direction: column; /* စာနဲ့ ပုံကို အပေါ်အောက် ထားဖို့ */
+    text-align: center;
+}
+
+.welcomemessage {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 40px;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.BrandName{
+    font-size: 30px;
+    text-shadow: #000000;
+    font-weight: bold;
+
+}
+
+/* --- Banner Styling --- */
+.banner-box1 {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-img1 {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.banner-img1:hover {
+    transform: scale(1.02); /* ပုံပေါ် mouse တင်ရင် နည်းနည်း ကြွလာမယ် */
+}
+.banner-box2 {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-img2 {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.banner-img2:hover {
+    transform: scale(1.02); /* ပုံပေါ် mouse တင်ရင် နည်းနည်း ကြွလာမယ် */
+}
+.banner-box3 {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-img3 {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.banner-img3:hover {
+    transform: scale(1.02); /* ပုံပေါ် mouse တင်ရင် နည်းနည်း ကြွလာမယ် */
+}    
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: rgba(113, 166, 222, 0.95); /* Matches your navbar */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    top: 100%; /* Appears right below the link */
+    left: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.dropdown-content li a:hover {
+    background-color: rgba(219, 46, 152, 0.2); /* Subtle hover effect */
+}
+
+/* Class to show the dropdown via JavaScript */
+.show {
+    display: block !important;
+}
+
+/* --- Mobile View (Responsive) --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        margin-top: 20px;
+        justify-content: center;
+        flex-wrap: wrap; /* ဖုန်းမှာ menu တွေ ဆန့်အောင် အောက်ဆင်းပေးမယ် */
+    }
+
+    .nav-links li {
+        margin: 5px 15px;
+    }
+
+    .welcomemessage {
+        font-size: 20px;
+    }
+}

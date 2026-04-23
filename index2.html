@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eonix - Modern Glass Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="light-sweep"></div>
+    <div class="wrapper">
+        <nav>
+            <a href="#" class="logo">Eonix</a>
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="menu-icon"><i class="material-icons">menu</i></label>
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="dropbtn" id="nationBtn">Nation ▾</a>
+                        <ul class="dropdown-content" id="nationDropdown">
+                            <li><a href="kashin.html">Kachin Foods</a></li>
+                            <li><a href="kayah.html">Kayah Foods</a></li>
+                            <li><a href="kayin.html">Kayin Foods</a></li>
+                            <li><a href="chin.html">Chin Foods</a></li>
+                            <li><a href="mon.html">Mon Foods</a></li>
+                            <li><a href="rakhine.html">Rakhine Foods</a></li>
+                            <li><a href="shan.html">Shan Foods</a></li>
+                            <li><a href="burma.html">Burma Foods</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="special.html">Special</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://t.me/bmkcoder">Donate for Developers</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+<section class="hero-section">
+<div class="container">
+<h1 class="hero-title">
+  <span class="one">Myanmma</span>
+  <span class="two">Traditional</span>
+  <span class="three">Foods</span>
+  <span class="four">from</span>
+  <span class="five">Ethnic</span>
+  <span class="six">Nationality</span><br>
+<span class="slider">
+<span class="slide-track">
+<span class="four">Welcome from</span>
+<span class="five">Our Delicious</span>
+<span class="one">Myanmar Foods</span>
+</span>
+</span>
+</h1>
+
+<div class="slider-container">
+
+    <div class="slider-track" id="sliderTrack">
+
+        <div class="slide">
+            <img src="bunderone.jpg">
+        </div>
+
+        <div class="slide">
+            <img src="bundertwo.jpg">
+        </div>
+
+        <div class="slide">
+            <img src="bunderthree.jpg">
+        </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <button class="nav-btn prev" id="prevBtn">‹</button>
+    <button class="nav-btn next" id="nextBtn">›</button>
+
+</div>
+</section>
+
+
+    <script>
+        const nationBtn = document.getElementById('nationBtn');
+        const nationDropdown = document.getElementById('nationDropdown');
+
+        // Nation နှိပ်လျှင် Dropdown ပေါ်ရန်
+        nationBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nationDropdown.classList.toggle('show');
+        });
+
+        // အပြင်ဘက်ကိုနှိပ်လျှင် Dropdown ပြန်ပိတ်သွားစေရန်
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                if (nationDropdown.classList.contains('show')) {
+                    nationDropdown.classList.remove('show');
+                }
+            }
+        }
+        const track = document.getElementById('sliderTrack');
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+let index = 0;
+
+function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+});
+
+/* AUTO SLIDE */
+setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+}, 4000);
+    </script>
+</body>
+</html>
